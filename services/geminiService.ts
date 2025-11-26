@@ -21,14 +21,12 @@ export const generateBotResponse = async (
   // or if we are in a browser environment where direct calls to other APIs might be blocked by CORS.
   // We use the `systemInstruction` to align the persona.
 
-  // Use provided API key from settings, or fall back to environment variable
-  const effectiveApiKey = apiKey || process.env.API_KEY;
-
-  if (!effectiveApiKey) {
+  // Use API key from settings only (no fallback to environment)
+  if (!apiKey) {
     return `Error: No API key provided for Gemini. Please add your API key in Settings.`;
   }
 
-  const ai = new GoogleGenAI({ apiKey: effectiveApiKey });
+  const ai = new GoogleGenAI({ apiKey: apiKey });
   const isSimulation = botId !== BotId.GEMINI;
 
   try {
