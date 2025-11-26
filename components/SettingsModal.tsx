@@ -105,22 +105,13 @@ const SettingsModal: React.FC<SettingsModalProps> = ({ isOpen, onClose, settings
                           <label className="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1.5 flex items-center gap-1">
                              <Key size={14} /> API Key
                           </label>
-                          {bot.id === BotId.GEMINI ? (
-                             <input
-                               type="text"
-                               disabled
-                               value="Provided via Environment"
-                               className="w-full rounded-lg border border-gray-200 bg-gray-100 px-3 py-2 text-sm text-gray-500 italic cursor-not-allowed"
-                             />
-                          ) : (
-                            <input
-                              type="password"
-                              value={settings.apiKeys[bot.id] || ''}
-                              onChange={(e) => handleApiKeyChange(bot.id, e.target.value)}
-                              placeholder={`sk-...`}
-                              className="w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 transition-all"
-                            />
-                          )}
+                          <input
+                            type="password"
+                            value={settings.apiKeys[bot.id] || ''}
+                            onChange={(e) => handleApiKeyChange(bot.id, e.target.value)}
+                            placeholder={bot.id === BotId.GEMINI ? 'Enter your Gemini API key' : 'sk-...'}
+                            className="w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 transition-all"
+                          />
                         </div>
                       </div>
 

@@ -8,9 +8,10 @@ export const generateBotResponse = async (
   history: Message[],
   model: string,
   systemInstruction: string,
-  attachments?: { data: string; mimeType: string }[]
+  attachments?: { data: string; mimeType: string }[],
+  apiKey?: string
 ): Promise<string> => {
-  
+
   // REAL IMPLEMENTATION NOTE:
   // In a production app, we would use the official SDKs for OpenAI, Anthropic, etc.
   // OR a proxy backend to avoid CORS issues.
@@ -20,8 +21,14 @@ export const generateBotResponse = async (
   // or if we are in a browser environment where direct calls to other APIs might be blocked by CORS.
   // We use the `systemInstruction` to align the persona.
 
-  // NOTE: According to guidelines, API Key must be from process.env.API_KEY
-  const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+  // Use provided API key from settings, or fall back to environment variable
+  const effectiveApiKey = apiKey || process.env.API_KEY;
+
+  if (!effectiveApiKey) {
+    return `Error: No API key provided for Gemini. Please add your API key in Settings.`;
+  }
+
+  const ai = new GoogleGenAI({ apiKey: effectiveApiKey });
   const isSimulation = botId !== BotId.GEMINI;
 
   try {

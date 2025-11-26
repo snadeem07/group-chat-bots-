@@ -120,7 +120,8 @@ const App: React.FC = () => {
           messages, // Passing history (though service currently simplified)
           settings.models[botId],
           settings.systemPrompts[botId],
-          apiAttachments.length > 0 ? apiAttachments.map(a => ({ data: a.data, mimeType: a.mimeType })) : undefined
+          apiAttachments.length > 0 ? apiAttachments.map(a => ({ data: a.data, mimeType: a.mimeType })) : undefined,
+          settings.apiKeys[BotId.GEMINI] // Pass Gemini API key (used for all bots)
         );
 
         setMessages(prev => [...prev, {
