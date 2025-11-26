@@ -220,10 +220,11 @@ const App: React.FC = () => {
 
   return (
     <div className="flex h-screen w-full bg-white overflow-hidden">
-      <Sidebar 
-        activeBots={activeBots} 
-        onToggleBot={handleToggleBot} 
-        onOpenSettings={() => setSettingsOpen(true)} 
+      <Sidebar
+        activeBots={activeBots}
+        onToggleBot={handleToggleBot}
+        onOpenSettings={() => setSettingsOpen(true)}
+        settings={settings}
       />
 
       <main className="flex-1 flex flex-col h-full relative">
