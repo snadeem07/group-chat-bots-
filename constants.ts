@@ -31,7 +31,7 @@ export const BOTS: Record<BotId, BotConfig> = {
     bgColor: 'bg-orange-50',
     borderColor: 'border-orange-200',
     description: 'Anthropic',
-    defaultModel: 'claude-3-5-sonnet-latest',
+    defaultModel: 'claude-sonnet-4-5-latest',
     fallbackModel: 'gemini-2.5-pro', // Simulation
   },
   [BotId.QWEN]: {
@@ -61,7 +61,7 @@ export const BOTS: Record<BotId, BotConfig> = {
 export const AVAILABLE_MODELS: Record<BotId, string[]> = {
   [BotId.GEMINI]: ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.5-flash-lite', 'gemini-2.0-flash', 'gemini-2.0-flash-lite', 'gemini-3-pro'],
   [BotId.OPENAI]: ['gpt-4o', 'gpt-4o-mini', 'gpt-4-turbo', 'o1-preview', 'o1-mini'],
-  [BotId.CLAUDE]: ['claude-3-5-sonnet-latest', 'claude-3-5-haiku-latest', 'claude-3-opus-latest'],
+  [BotId.CLAUDE]: ['claude-sonnet-4-5-latest', 'claude-haiku-4-5-latest', 'claude-opus-4-5-latest', 'claude-opus-4-1-latest'],
   [BotId.QWEN]: ['qwen-max', 'qwen-plus', 'qwen-turbo', 'qwen-long'],
   [BotId.DEEPSEEK]: ['deepseek-chat', 'deepseek-reasoner'],
 };
