@@ -1,0 +1,8 @@
+{
+  "name": "OmniChat - AI Group Chat",
+  "description": "A collaborative chat environment uniting Gemini, GPT, Claude, Qwen, and DeepSeek in a single interface.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
