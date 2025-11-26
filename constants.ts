@@ -21,7 +21,7 @@ export const BOTS: Record<BotId, BotConfig> = {
     borderColor: 'border-emerald-200',
     description: 'OpenAI',
     defaultModel: 'gpt-4o',
-    fallbackModel: 'gemini-3-pro-preview', // Simulation
+    fallbackModel: 'gemini-2.5-pro', // Simulation
   },
   [BotId.CLAUDE]: {
     id: BotId.CLAUDE,
@@ -32,7 +32,7 @@ export const BOTS: Record<BotId, BotConfig> = {
     borderColor: 'border-orange-200',
     description: 'Anthropic',
     defaultModel: 'claude-3-5-sonnet-latest',
-    fallbackModel: 'gemini-3-pro-preview', // Simulation
+    fallbackModel: 'gemini-2.5-pro', // Simulation
   },
   [BotId.QWEN]: {
     id: BotId.QWEN,
@@ -54,12 +54,12 @@ export const BOTS: Record<BotId, BotConfig> = {
     borderColor: 'border-cyan-200',
     description: 'DeepSeek',
     defaultModel: 'deepseek-chat',
-    fallbackModel: 'gemini-3-pro-preview', // Simulation
+    fallbackModel: 'gemini-2.5-pro', // Simulation
   },
 };
 
 export const AVAILABLE_MODELS: Record<BotId, string[]> = {
-  [BotId.GEMINI]: ['gemini-2.5-flash', 'gemini-3-pro-preview', 'gemini-2.5-flash-lite-latest', 'gemini-2.5-flash-thinking'],
+  [BotId.GEMINI]: ['gemini-2.5-flash', 'gemini-2.5-pro', 'gemini-2.5-flash-lite', 'gemini-2.0-flash', 'gemini-2.0-flash-lite', 'gemini-3-pro'],
   [BotId.OPENAI]: ['gpt-4o', 'gpt-4o-mini', 'gpt-4-turbo', 'o1-preview', 'o1-mini'],
   [BotId.CLAUDE]: ['claude-3-5-sonnet-latest', 'claude-3-5-haiku-latest', 'claude-3-opus-latest'],
   [BotId.QWEN]: ['qwen-max', 'qwen-plus', 'qwen-turbo', 'qwen-long'],
